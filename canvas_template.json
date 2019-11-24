@@ -1,0 +1,28 @@
+{
+    "@id": "<uri>",
+    "@type": "sc:Canvas",
+    "format": "image/jpeg",
+    "height": 0,
+    "images": [{
+        "@id": "<uri>",
+        "@type": "oa:Annotation",
+        "license": "<unknown>",
+        "motivation": "sc:painting",
+        "on": "<uri>",
+        "resource": {
+            "@id": "<uri>",
+            "@type": "dctypes:Image",
+            "format": "image/jpeg",
+            "height": 0,
+            "label": "<label>",
+            "service": {
+                "@context": "http://iiif.io/api/image/2/context.json",
+                "@id": "<uri>",
+                "profile": "http://iiif.io/api/image/2/level1.json"
+            },
+            "width": 0
+        }
+    }],
+    "label": "<label>",
+    "width": 0
+}

@@ -1,0 +1,16 @@
+{
+    "@context": "http://iiif.io/api/presentation/2/context.json",
+    "@id": "<uri>",
+    "@type": "sc:Manifest",
+    "attribution": "<unknown>",
+    "description": "<unknown>",
+    "label": "<unkown>",
+    "logo": "",
+    "metadata": [],
+    "related": [],
+    "sequences": [{
+        "@id": "<uri>",
+        "@type": "sc:Sequence",
+        "canvases": []
+    }]
+}
