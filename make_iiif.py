@@ -43,7 +43,10 @@ def addCanvasToManifest(manifest,canvas,config,image,ic):
     canvas['label'] = label
     canvas['images'][0]['resource']['label'] = label
     # set service
-    canvas['images'][0]['resource']['service']['@id'] = config['baseurl']+"/"+image
+    try:
+        canvas['images'][0]['resource']['service']['@id'] = config['baseurl']+"/"+image
+    except UnicodeDecodeError:
+        canvas['images'][0]['resource']['service']['@id'] = config['baseurl']+"/"+image.decode('utf-8')
     # append canvas to manifest
     manifest['sequences'][0]['canvases'].append(canvas)
     return manifest
