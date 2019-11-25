@@ -10,6 +10,7 @@ import hashlib
 import copy
 import subprocess
 import sys
+from PIL import Image
 
 def buildManifest(manifest,folder,config):
     uri = config['baseurl']+"/manifests/"+id+".json"
@@ -30,8 +31,11 @@ def addCanvasToManifest(manifest,canvas,config,image,ic):
     # linke IDs
     canvas['images'][0]['on'] = canvas['@id']
     # set image dimensions
-    output = subprocess.check_output(["./get_image_dim.sh", image[:-5]])
-    width, height = [int(v) for v in output.strip().split('x')]
+    # output = subprocess.check_output(["./get_image_dim.sh", image[:-5]])
+    # width, height = [int(v) for v in output.strip().split('x')]
+    im=Image.open(image[:-5])
+    width=im.size[0]
+    height=im.size[1]
     canvas['width'] = width
     canvas['images'][0]['resource']['width'] = width
     canvas['height'] = height
